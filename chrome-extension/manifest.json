@@ -1,9 +1,9 @@
 {
     
-    "name": "Getting Started Example",
+    "name": "Verify",
     "version": "1.0",
-    "description": "Build an Extension!",
-    "permissions": ["storage", "declarativeContent", "activeTab"],
+    "description": "Summarize articles and check Bias",
+    "permissions": ["storage", "declarativeContent", "activeTab", "tabs"],
     "background": {
       "scripts": ["background.js"],
       "persistent": false
@@ -11,7 +11,6 @@
     "page_action": {
       "default_popup": "popup.html",
       "default_icon": {
-       
         "128": "images/finalicon.png"
       }
     },
