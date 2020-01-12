@@ -3,7 +3,7 @@ chrome.tabs.getSelected(null,function(tab) {
   console.log(tab.url);
   const url='https://declanh.api.stdlib.com/verify2@dev/' + '?url=' + tab.url;
   chrome.storage.sync.get(url, (value) => {
-    if (url in value) {
+    if (url in value && value[url]['bias'] != "NULL" && value[url][bias] != "Unknown") {
       propagateData(value[url]['text'], value[url]['bias'], url);
       console.log("fetched locally");
     } else {

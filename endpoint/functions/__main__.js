@@ -55,9 +55,6 @@ const getBias = async (url, retry=false) => {
     bias = bias.toLowerCase();
     bias = bias.split('bias')[0];
     bias = bias[0].toUpperCase() + bias.substring(1);
-    if (bias.length() > 25) {
-      return "Unknown";
-    }
     return bias;
   } catch (e) {
     if (retry === true) {
