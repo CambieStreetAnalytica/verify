@@ -7,10 +7,10 @@ chrome.runtime.onInstalled.addListener(function() {
       chrome.declarativeContent.onPageChanged.addRules([{
         conditions: [new chrome.declarativeContent.PageStateMatcher({
           // extension only active on this page
-          pageUrl: {hostEquals: 'developer.chrome.com'},
+          
         })
         ],
             actions: [new chrome.declarativeContent.ShowPageAction()]
       }]);
     });
-  });
+  }); 
