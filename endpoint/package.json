@@ -2,6 +2,7 @@
   "name": "",
   "author": "",
   "dependencies": {
-    "deepai": "^1.0.15"
+    "deepai": "^1.0.15",
+    "@google-cloud/language": "^3.7.0"
   }
 }
