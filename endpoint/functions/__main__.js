@@ -54,7 +54,7 @@ const getBias = async (url, retry=false) => {
     let bias = biasSearch.split("[CDATA[Media Bias Fact Check]]")[1].split("<description><![CDATA[<p>")[1];
     bias = bias.toLowerCase();
     bias = bias.split('bias')[0];
-    bias = bias[0].toUpperCase() + bias.substring(1) + "Bias";
+    bias = bias[0].toUpperCase() + bias.substring(1);
     return bias;
     if (bias.length() > 25) {
       return "Unknown";
