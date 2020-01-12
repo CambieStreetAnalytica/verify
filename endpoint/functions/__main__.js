@@ -13,7 +13,7 @@ module.exports = async (url = '', data = '') => {
   let siteName = articleArray[1];
   let bias = await getBias(siteName);
   let summary = await summarizeArticle(articleText);
-  return {'status': 200, 'text': summary.length > 5 ? summary : articleText, 'bias': bias};
+  return {'status': 200, 'text': summary, 'bias': bias};
 };
 
 const getArticleText = async (url = '', retry=false) => {
@@ -55,10 +55,10 @@ const getBias = async (url, retry=false) => {
     bias = bias.toLowerCase();
     bias = bias.split('bias')[0];
     bias = bias[0].toUpperCase() + bias.substring(1);
-    return bias;
     if (bias.length() > 25) {
       return "Unknown";
     }
+    return bias;
   } catch (e) {
     if (retry === true) {
       return "Unknown";
@@ -83,7 +83,7 @@ const summarizeArticle = async (text, retry=false) => {
     text: text,
   });
   try {
-    return resp['output'];
+    return resp['output'].length > 0 ? resp['output'] : "NULL";
   } catch (e) {
     if (retry === true) {
       return "NULL";
