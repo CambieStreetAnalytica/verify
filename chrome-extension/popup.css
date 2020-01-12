@@ -79,6 +79,10 @@
     }
   }
 
+  #analyzing {
+      margin-bottom: 0;
+  }
+
   #main {
       display: flex;
       flex-direction: column;
@@ -91,6 +95,17 @@
   #bias {
       display: flex;
       flex-direction: row;
+      height: 20px;
+  }
+
+  #sentiment {
+      display: flex;
+      flex-direction: row;
+      height: 20px;
+  }
+
+  #summary {
+      margin-top: 25px;
   }
 
   .insertedSummary {
