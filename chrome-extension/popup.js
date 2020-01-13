@@ -1,7 +1,7 @@
 chrome.tabs.getSelected(null,function(tab) {
   const Http = new XMLHttpRequest();
   console.log(tab.url);
-  const url='https://declanh.api.stdlib.com/verify2@dev/' + '?url=' + encodeURIComponent(tab.url);
+  const url='https://declanh2.api.stdlib.com/verify3@dev/' + '?url=' + encodeURIComponent(tab.url);
   chrome.storage.sync.get(url, (value) => {
     if (url in value && value[url]['bias'] != "NULL" && value[url]['bias'] != "Unknown") {
       propagateData(value[url]['text'], value[url]['bias'], value[url]['sentiment']);
